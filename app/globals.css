@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #050607;
+  --surface: #111318;
+  --foreground: #f4f5f6;
+  --muted-foreground: #b0b6c2;
+  --electric: #21c7ff;
+  --electric-soft: rgba(33, 199, 255, 0.2);
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-electric: var(--electric);
+  --color-electric-soft: var(--electric-soft);
+  --color-border: var(--border);
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a {
+  transition: color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+::selection {
+  background: var(--electric-soft);
+  color: var(--foreground);
+}
+
+.layout-shell {
+  position: relative;
+}
+
+.layout-shell::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.12;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.7) 0.4px, transparent 0.4px);
+  background-size: 2px 2px;
+  mix-blend-mode: soft-light;
+}
+
+.electric-ring {
+  box-shadow: 0 0 0 1px var(--electric-soft), 0 0 20px var(--electric-soft);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "Cody Meneley | Tattoo Artist",
+    "description": "Premium tattoo craftsmanship by Cody Meneley. Tattooing since 2004, sponsored artist, with a black and grey specialty."
+  },
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "booking": "Booking",
+    "aftercare": "Aftercare",
+    "faq": "FAQ",
+    "policies": "Policies",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "home": {
+    "eyebrow": "Tattooing Since 2004",
+    "headline": "Precision Tattooing with a Black and Grey Signature",
+    "subheadline": "Cody Meneley delivers clean, professional tattoo work across all styles, with a specialized focus on black and grey realism and detail.",
+    "ctaBooking": "Book Consultation",
+    "ctaPortfolio": "View Portfolio",
+    "statsA": "20+ Years Craft",
+    "statsB": "All Styles Welcome",
+    "statsC": "Sponsored Artist"
+  },
+  "booking": {
+    "title": "Book an Appointment",
+    "description": "Use the booking portal below. If the embed does not load on your device, use the direct link."
+  },
+  "contact": {
+    "title": "Contact Cody",
+    "description": "Tell me about your idea, placement, size, and timeline."
+  },
+  "common": {
+    "localeLabel": "Language",
+    "bookNow": "Book Now",
+    "instagram": "Instagram",
+    "facebook": "Facebook"
+  }
+}

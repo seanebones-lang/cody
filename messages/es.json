@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "title": "Cody Meneley | Artista del Tatuaje",
+    "description": "Trabajo premium de tatuaje con Cody Meneley. Tatuando desde 2004, artista patrocinado y especialista en black and grey."
+  },
+  "nav": {
+    "home": "Inicio",
+    "portfolio": "Portafolio",
+    "about": "Sobre Cody",
+    "booking": "Reservas",
+    "aftercare": "Cuidados",
+    "faq": "Preguntas",
+    "policies": "Políticas",
+    "testimonials": "Testimonios",
+    "contact": "Contacto"
+  },
+  "home": {
+    "eyebrow": "Tatuando Desde 2004",
+    "headline": "Tatuajes de Precisión con Sello Black and Grey",
+    "subheadline": "Cody Meneley ofrece trabajo limpio y profesional en todos los estilos, con enfoque especializado en black and grey realista y de detalle.",
+    "ctaBooking": "Reservar Consulta",
+    "ctaPortfolio": "Ver Portafolio",
+    "statsA": "20+ Años de Trayectoria",
+    "statsB": "Todos los Estilos",
+    "statsC": "Artista Patrocinado"
+  },
+  "booking": {
+    "title": "Reserva una Cita",
+    "description": "Usa el portal de reservas abajo. Si no carga en tu dispositivo, usa el enlace directo."
+  },
+  "contact": {
+    "title": "Contacta a Cody",
+    "description": "Cuéntame tu idea, ubicación, tamaño y tiempos."
+  },
+  "common": {
+    "localeLabel": "Idioma",
+    "bookNow": "Reservar",
+    "instagram": "Instagram",
+    "facebook": "Facebook"
+  }
+}
