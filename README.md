@@ -38,7 +38,7 @@ Copy `.env.example` to `.env.local` and fill required values:
 - `npm run dev` - start Next.js dev server
 - `npm run build` - production build
 - `npm run lint` - run ESLint
-- `npm run studio` - run Sanity Studio from `./sanity`
+- `npm run studio` - run Sanity Studio (npm workspace `sanity/`; requires `sanity/package.json` and `sanity/.env` with `NEXT_PUBLIC_SANITY_*` vars)
 
 ## Notes
 

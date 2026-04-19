@@ -2,12 +2,15 @@
   "name": "cody",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "sanity"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "studio": "sanity dev --cwd sanity"
+    "studio": "cd sanity && npm run dev"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -27,7 +30,6 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@sanity/vision": "^5.21.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -35,7 +37,6 @@
     "@types/three": "^0.184.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
-    "sanity": "^5.21.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

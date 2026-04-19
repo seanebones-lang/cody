@@ -20,3 +20,16 @@ export const featuredPortfolioQuery = groq`
     images
   }
 `;
+
+/** All published portfolio pieces (newest / featured first). */
+export const portfolioListQuery = groq`
+  *[_type == "portfolioPiece"] | order(coalesce(featured, false) desc, _updatedAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    description,
+    styleTags,
+    featured,
+    images
+  }
+`;
