@@ -5,6 +5,7 @@ export const siteSettingsQuery = groq`
     siteName,
     tagline,
     bookingUrl,
+    depositPaymentUrl,
     instagramUrl,
     facebookUrl,
     contactEmail

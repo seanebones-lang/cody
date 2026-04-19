@@ -26,7 +26,18 @@
   },
   "booking": {
     "title": "Book an Appointment",
-    "description": "Use the booking portal below. If the embed does not load on your device, use the direct link."
+    "description": "Schedule a session and pay a studio deposit when required. If an embed does not load, use the direct links.",
+    "scheduleHeading": "Schedule",
+    "depositHeading": "Deposit",
+    "iframeTitle": "Booking portal",
+    "openBookingTab": "Open booking in a new tab",
+    "depositBody": "Use the secure link below to pay a deposit or balance your artist sent you (for example via Stripe or Square). You will complete checkout on the payment provider’s site.",
+    "depositCta": "Pay deposit",
+    "depositNote": "Deposits are often non-refundable and hold your appointment time—see Policies for details.",
+    "depositOptionalHint": "To add a deposit button here, set Deposit / payment link in Sanity (Site Settings) or NEXT_PUBLIC_DEPOSIT_URL in your environment.",
+    "emptyHelp": "Add links so clients can book and pay deposits from this page.",
+    "emptySanity": "In Sanity Studio → Site Settings: set Booking URL (embed) and optionally Deposit / payment link.",
+    "emptyEnv": "Or set NEXT_PUBLIC_BOOKING_URL and NEXT_PUBLIC_DEPOSIT_URL in .env.local / Vercel (then redeploy)."
   },
   "contact": {
     "title": "Contact Cody",

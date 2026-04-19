@@ -26,7 +26,18 @@
   },
   "booking": {
     "title": "Reserva una Cita",
-    "description": "Usa el portal de reservas abajo. Si no carga en tu dispositivo, usa el enlace directo."
+    "description": "Agenda una sesión y paga el depósito del estudio cuando corresponda. Si un embed no carga, usa los enlaces directos.",
+    "scheduleHeading": "Agenda",
+    "depositHeading": "Depósito",
+    "iframeTitle": "Portal de reservas",
+    "openBookingTab": "Abrir reservas en una pestaña nueva",
+    "depositBody": "Usa el enlace seguro para pagar un depósito o saldo que tu artista te haya enviado (por ejemplo con Stripe o Square). Completarás el pago en el sitio del proveedor.",
+    "depositCta": "Pagar depósito",
+    "depositNote": "Los depósitos suelen ser no reembolsables y fijan tu cita—revisa Políticas para más detalle.",
+    "depositOptionalHint": "Para mostrar un botón de depósito, configura el enlace en Sanity (Ajustes del sitio) o NEXT_PUBLIC_DEPOSIT_URL en el entorno.",
+    "emptyHelp": "Añade enlaces para que los clientes reserven y paguen depósitos desde esta página.",
+    "emptySanity": "En Sanity Studio → Ajustes del sitio: Booking URL (embed) y opcionalmente enlace de depósito / pago.",
+    "emptyEnv": "O define NEXT_PUBLIC_BOOKING_URL y NEXT_PUBLIC_DEPOSIT_URL en .env.local / Vercel (luego redeploy)."
   },
   "contact": {
     "title": "Contacta a Cody",
