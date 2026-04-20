@@ -7,7 +7,7 @@ import { type NextRequest, NextResponse } from "next/server";
  * Configure in Sanity Studio → API → Webhooks:
  *   URL:    https://<your-site>/api/revalidate
  *   Secret: set the same value as SANITY_REVALIDATE_SECRET env var
- *   Filter: _type in ["portfolioPiece","artist","testimonial","siteSettings","faqItem"]
+ *   Filter: _type in ["portfolioPiece","artist","testimonial","siteSettings","faqItem","aftercarePage","sponsorPartner"]
  *   Method: POST
  *
  * Payload example:
@@ -77,6 +77,16 @@ export async function POST(req: NextRequest) {
       for (const locale of ["en", "es"]) {
         revalidatePath(`/${locale}/faq`);
         revalidated.push(`/${locale}/faq`);
+      }
+    } else if (type === "aftercarePage") {
+      for (const locale of ["en", "es"]) {
+        revalidatePath(`/${locale}/aftercare`);
+        revalidated.push(`/${locale}/aftercare`);
+      }
+    } else if (type === "sponsorPartner") {
+      for (const locale of ["en", "es"]) {
+        revalidatePath(`/${locale}`);
+        revalidated.push(`/${locale}`);
       }
     } else {
       // Fallback: revalidate sitemap + layout
