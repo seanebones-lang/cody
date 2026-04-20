@@ -132,6 +132,15 @@ export default async function PortfolioPiecePage({ params }: Props) {
                 </ul>
               ) : null}
 
+              {piece.publishedAt ? (
+                <p className="mt-2 text-xs text-muted-foreground">
+                  {new Date(piece.publishedAt).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                  })}
+                </p>
+              ) : null}
+
               {piece.description ? (
                 <p className="mt-4 leading-relaxed text-muted-foreground">{piece.description}</p>
               ) : null}
