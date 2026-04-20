@@ -4,6 +4,24 @@ import { PageShell } from "@/components/page-shell";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
 
+const personLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.siteUrl,
+  email: siteConfig.email,
+  description: "Tattoo artist tattooing professionally since 2004. Sponsored artist specializing in black and grey realism, fine line, and custom illustrative work.",
+  knowsAbout: ["Tattoo", "Black and grey realism", "Fine line tattoo", "Cover-up tattoo", "Custom illustrative tattoo"],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Tattoo Artist",
+    startDate: "2004",
+    occupationLocation: { "@type": "Country", name: "United States" },
+    skills: "Black and grey realism, fine line, script, illustrative, traditional, cover-ups",
+  },
+  sameAs: [siteConfig.instagram, siteConfig.facebook].filter(Boolean),
+};
+
 type AboutPageProps = {
   params: Promise<{ locale: string }>;
 };
@@ -66,6 +84,11 @@ export default async function AboutPage({ params }: AboutPageProps) {
   setRequestLocale(locale);
 
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+    />
     <PageShell
       title="About Cody"
       description="Cody Meneley has tattooed professionally since 2004. Sponsored artist, versatile across styles, with black and grey as a signature specialty."
@@ -145,5 +168,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
         </Link>
       </div>
     </PageShell>
+    </>
   );
 }
