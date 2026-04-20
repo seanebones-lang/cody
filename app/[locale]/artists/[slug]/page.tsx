@@ -234,12 +234,14 @@ export default async function ArtistPage({ params }: Props) {
                   Portfolio ({artist.portfolioPieces.length})
                 </h2>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {artist.portfolioPieces.map((piece) => (
-                    <Link key={piece._id} href={`/portfolio/${piece.slug}`}>
+                  {artist.portfolioPieces.map((piece, i) => (
+                    <Link key={piece._id} href={`/portfolio/${piece.slug}`} className="group">
                       <PortfolioPieceCard
                         title={piece.title}
                         styleTags={piece.styleTags}
                         image={piece.images?.[0] ?? null}
+                        featured={piece.featured ?? false}
+                        priority={i < 3}
                       />
                     </Link>
                   ))}
