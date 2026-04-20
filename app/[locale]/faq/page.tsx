@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { PageShell } from "@/components/page-shell";
+import { FaqAccordion } from "@/components/faq-accordion";
 
 type FaqPageProps = {
   params: Promise<{ locale: string }>;
@@ -75,14 +76,7 @@ export default async function FaqPage({ params }: FaqPageProps) {
         title="FAQ"
         description="Quick answers to common booking, style, and process questions."
       >
-        <div className="grid gap-4">
-          {faqs.map((item) => (
-            <article key={item.question} className="section-card rounded-xl p-6">
-              <h2 className="font-semibold">{item.question}</h2>
-              <p className="mt-2 text-muted-foreground">{item.answer}</p>
-            </article>
-          ))}
-        </div>
+        <FaqAccordion items={faqs} />
       </PageShell>
     </>
   );
