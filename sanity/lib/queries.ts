@@ -77,6 +77,7 @@ export const portfolioPieceBySlugQuery = groq`
     "slug": slug.current,
     description,
     styleTags,
+    placement,
     featured,
     images,
     healedImage,

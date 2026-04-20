@@ -119,9 +119,14 @@ export default async function PortfolioPiecePage({ params }: Props) {
                 {piece.title}
               </h1>
 
-              {piece.styleTags?.length ? (
+              {piece.styleTags?.length || piece.placement ? (
                 <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Style tags">
-                  {piece.styleTags.map((tag) => (
+                  {piece.placement ? (
+                    <li className="rounded-full border border-electric/30 bg-electric/5 px-2 py-0.5 text-[10px] uppercase tracking-wider text-electric">
+                      {piece.placement}
+                    </li>
+                  ) : null}
+                  {piece.styleTags?.map((tag) => (
                     <li
                       key={tag}
                       className="rounded-full border border-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-muted-foreground"
