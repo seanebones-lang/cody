@@ -27,7 +27,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const result = await getArtistBySlug(slug);
   if (!result.ok) return {};
 
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...(imageUrl ? { images: [{ url: imageUrl, width: 1200, height: 630 }] } : {}),
     },
     alternates: {
-      canonical: `${siteConfig.siteUrl}/en/artists/${slug}`,
+      canonical: `${siteConfig.siteUrl}/${locale}/artists/${slug}`,
       languages: {
         en: `${siteConfig.siteUrl}/en/artists/${slug}`,
         es: `${siteConfig.siteUrl}/es/artists/${slug}`,

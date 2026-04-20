@@ -8,6 +8,7 @@ import { PortfolioPieceCard } from "@/components/portfolio-piece-card";
 import { BookingCta } from "@/components/booking-cta";
 import { ImageGallery } from "@/components/image-gallery";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ShareButtons } from "@/components/share-buttons";
 import { getPortfolioPieceBySlug, getPortfolioPieceSlugs } from "./piece-data";
 
 type Props = {
@@ -25,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const result = await getPortfolioPieceBySlug(slug);
   if (!result.ok) return {};
 
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...(imageUrl ? { images: [{ url: imageUrl, width: 1200, height: 630 }] } : {}),
     },
     alternates: {
-      canonical: `${siteConfig.siteUrl}/en/portfolio/${slug}`,
+      canonical: `${siteConfig.siteUrl}/${locale}/portfolio/${slug}`,
       languages: {
         en: `${siteConfig.siteUrl}/en/portfolio/${slug}`,
         es: `${siteConfig.siteUrl}/es/portfolio/${slug}`,
@@ -160,25 +161,11 @@ export default async function PortfolioPiecePage({ params }: Props) {
             {/* Share */}
             <div className="section-card rounded-xl p-4">
               <p className="text-xs uppercase tracking-widest text-muted-foreground">Share</p>
-              <div className="mt-2 flex gap-3 text-sm">
-                <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${siteConfig.siteUrl}/en/portfolio/${piece.slug}`)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-muted-foreground hover:text-electric"
-                  aria-label="Share on Facebook"
-                >
-                  Facebook
-                </a>
-                <a
-                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${siteConfig.siteUrl}/en/portfolio/${piece.slug}`)}&text=${encodeURIComponent(piece.title)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-muted-foreground hover:text-electric"
-                  aria-label="Share on X (Twitter)"
-                >
-                  X / Twitter
-                </a>
+              <div className="mt-2">
+                <ShareButtons
+                  url={`${siteConfig.siteUrl}/${locale}/portfolio/${piece.slug}`}
+                  title={piece.title}
+                />
               </div>
             </div>
           </div>
