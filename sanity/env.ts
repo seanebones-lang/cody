@@ -16,12 +16,13 @@ function readEnv(...keys: string[]): string | undefined {
   return undefined;
 }
 
-const projectId = readEnv(
+const projectId =
+  readEnv(
   "SANITY_PROJECT_ID",
   "NEXT_PUBLIC_SANITY_PROJECT_ID",
   "SANITY_STUDIO_PROJECT_ID"
-);
-const dataset = readEnv("SANITY_DATASET", "NEXT_PUBLIC_SANITY_DATASET", "SANITY_STUDIO_DATASET");
+  ) ?? "0yft11i7";
+const dataset = readEnv("SANITY_DATASET", "NEXT_PUBLIC_SANITY_DATASET", "SANITY_STUDIO_DATASET") ?? "production";
 const apiVersion =
   readEnv("SANITY_API_VERSION", "NEXT_PUBLIC_SANITY_API_VERSION", "SANITY_STUDIO_API_VERSION") ??
   "2026-04-16";
